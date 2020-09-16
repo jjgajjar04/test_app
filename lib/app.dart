@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:test_app/screens/home.dart';
 import 'package:test_app/screens/button_screen.dart';
 import 'package:test_app/screens/list_screen.dart';
+import 'package:test_app/screens/row_column_screen.dart';
 
 class App extends StatelessWidget {
   @override
@@ -13,6 +14,7 @@ class App extends StatelessWidget {
         Home.id: (context) => Home(),
         ButtonScreen.id: (context) => ButtonScreen(),
         ListScreen.id: (context) => ListScreen(),
+        RowColumnScreen.id: (context) => RowColumnScreen(),
       },
     );
   }

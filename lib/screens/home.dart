@@ -17,31 +17,30 @@ class Home extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             ListCard(
-              title: 'card 1',
+              title: Constants.BUTTON_SCREEN,
               color: Colors.purple,
               onTap: () {
                 Navigator.pushNamed(context, Constants.BUTTON_SCREEN);
               },
             ),
             ListCard(
-              title: 'card 2',
+              title: Constants.LIST_SCREEN,
               color: Colors.indigo,
               onTap: () {
                 Navigator.pushNamed(context, Constants.LIST_SCREEN);
               },
             ),
             ListCard(
-              title: 'card 3',
+              title: Constants.ROW_COLUMN_SCREEN,
+              color: Colors.blue,
+              onTap: () {
+                Navigator.pushNamed(context, Constants.ROW_COLUMN_SCREEN);
+              },
             ),
-            ListCard(
-              title: 'card 4',
-            ),
-            ListCard(
-              title: 'card 5',
-            ),
-            ListCard(
-              title: 'card 6',
-            ),
+            ListCard(title: 'card 4', color: Colors.green),
+            ListCard(title: 'card 5', color: Colors.yellow),
+            ListCard(title: 'card 6', color: Colors.orange),
+            ListCard(title: 'card 6', color: Colors.red),
           ],
         ),
       ),
