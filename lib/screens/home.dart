@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:test_app/components/card/list_card.dart';
+import 'package:test_app/utils/constants.dart';
 
 class Home extends StatelessWidget {
+  static const String id = Constants.HOME_SCRREN;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,13 +18,17 @@ class Home extends StatelessWidget {
           children: [
             ListCard(
               title: 'card 1',
-              color: Colors.lightBlueAccent,
+              color: Colors.purple,
               onTap: () {
-                Navigator.pushNamed(context, '/button');
+                Navigator.pushNamed(context, Constants.BUTTON_SCREEN);
               },
             ),
             ListCard(
               title: 'card 2',
+              color: Colors.indigo,
+              onTap: () {
+                Navigator.pushNamed(context, Constants.LIST_SCREEN);
+              },
             ),
             ListCard(
               title: 'card 3',

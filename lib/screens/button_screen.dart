@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:test_app/components/button/custom_button.dart';
+import 'package:test_app/utils/constants.dart';
 
 class ButtonScreen extends StatelessWidget {
+  static const String id = Constants.BUTTON_SCREEN;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: Text('Button Screen'),
+      ),
       body: SafeArea(
         child: Center(
           child: Column(
@@ -21,7 +27,8 @@ class ButtonScreen extends StatelessWidget {
                 textColor: Colors.white,
                 onPressed: () {},
                 child: Text("Flat Button"),
-              )
+              ),
+              CustomButton(),
             ],
           ),
         ),
