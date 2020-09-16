@@ -37,9 +37,36 @@ class Home extends StatelessWidget {
                 Navigator.pushNamed(context, Constants.ROW_COLUMN_SCREEN);
               },
             ),
-            ListCard(title: 'card 4', color: Colors.green),
-            ListCard(title: 'card 5', color: Colors.yellow),
-            ListCard(title: 'card 6', color: Colors.orange),
+            ListCard(
+              title: Constants.SIMPLE_STATE_SCREEN,
+              color: Colors.green,
+              onTap: () {
+                Navigator.pushNamed(
+                  context,
+                  Constants.SIMPLE_STATE_SCREEN,
+                );
+              },
+            ),
+            ListCard(
+              title: Constants.MULTI_WIDGET_STATE_SCREEN,
+              color: Colors.yellow,
+              onTap: () {
+                Navigator.pushNamed(
+                  context,
+                  Constants.MULTI_WIDGET_STATE_SCREEN,
+                );
+              },
+            ),
+            ListCard(
+              title: Constants.PROVIDER_STATE_SCREEN,
+              color: Colors.orange,
+              onTap: () {
+                Navigator.pushNamed(
+                  context,
+                  Constants.PROVIDER_STATE_SCREEN,
+                );
+              },
+            ),
             ListCard(title: 'card 6', color: Colors.red),
           ],
         ),

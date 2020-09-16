@@ -3,4 +3,7 @@ class Constants {
   static const BUTTON_SCREEN = 'button_screen';
   static const LIST_SCREEN = 'list_screen';
   static const ROW_COLUMN_SCREEN = 'Row_Column_Screen';
+  static const SIMPLE_STATE_SCREEN = 'simple_state_screen';
+  static const MULTI_WIDGET_STATE_SCREEN = 'multi_widget_state_screen';
+  static const PROVIDER_STATE_SCREEN = 'provider_state_screen';
 }
