@@ -17,6 +17,13 @@ class Home extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             ListCard(
+              title: Constants.CARD_SCREEN,
+              color: Colors.black,
+              onTap: () {
+                Navigator.pushNamed(context, Constants.CARD_SCREEN);
+              },
+            ),
+            ListCard(
               title: Constants.BUTTON_SCREEN,
               color: Colors.purple,
               onTap: () {
@@ -67,7 +74,16 @@ class Home extends StatelessWidget {
                 );
               },
             ),
-            ListCard(title: 'card 6', color: Colors.red),
+            ListCard(
+              title: Constants.BLOC_PATTERN_STATE_SCREEN,
+              color: Colors.red,
+              onTap: () {
+                Navigator.pushNamed(
+                  context,
+                  Constants.BLOC_PATTERN_STATE_SCREEN,
+                );
+              },
+            ),
           ],
         ),
       ),

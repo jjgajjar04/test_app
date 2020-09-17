@@ -6,4 +6,6 @@ class Constants {
   static const SIMPLE_STATE_SCREEN = 'simple_state_screen';
   static const MULTI_WIDGET_STATE_SCREEN = 'multi_widget_state_screen';
   static const PROVIDER_STATE_SCREEN = 'provider_state_screen';
+  static const BLOC_PATTERN_STATE_SCREEN = 'bloc_pattern_state_screen';
+  static const CARD_SCREEN = 'card_screen';
 }
