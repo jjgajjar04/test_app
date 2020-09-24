@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:test_app/cubit/weather_cubit.dart';
+import 'package:test_app/bloc/weather_bloc.dart';
 import 'package:test_app/models/weather.dart';
 import 'package:test_app/utils/constants.dart';
 
@@ -21,7 +21,7 @@ class _BlocPatternStateScreenState extends State<BlocPatternStateScreen> {
       body: Container(
         padding: EdgeInsets.symmetric(vertical: 16),
         alignment: Alignment.center,
-        child: BlocConsumer<WeatherCubit, WeatherState>(
+        child: BlocConsumer<WeatherBloc, WeatherState>(
           listener: (context, state) {
             if (state is WeatherError) {
               Scaffold.of(context).showSnackBar(
@@ -97,7 +97,9 @@ class CityInputField extends StatelessWidget {
   }
 
   void submitCityName(BuildContext context, String cityName) {
-    final weatherCubit = context.bloc<WeatherCubit>();
-    weatherCubit.getWeather(cityName);
+    final weatherBloc = BlocProvider.of<WeatherBloc>(context);
+    weatherBloc.add(GetWeather(cityName: cityName));
+
+    // weatherBloc.close();
   }
 }

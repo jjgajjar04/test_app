@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
-import 'package:test_app/cubit/weather_cubit.dart';
+import 'package:test_app/bloc/weather_bloc.dart';
 import 'package:test_app/models/data_provider.dart';
 import 'package:test_app/screens/bloc_pattern_state_screen.dart';
 import 'package:test_app/screens/button_screen.dart';
@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
     return ChangeNotifierProvider<DataProvider>(
       create: (context) => DataProvider(),
       child: BlocProvider(
-        create: (context) => WeatherCubit(FakeWeatherRepository()),
+        create: (context) => WeatherBloc(FakeWeatherRepository()),
         child: MaterialApp(
           debugShowCheckedModeBanner: false,
           initialRoute: Home.id,
