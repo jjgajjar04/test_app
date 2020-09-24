@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:test_app/cubit/weather_cubit.dart';
 import 'package:test_app/models/weather.dart';
 import 'package:test_app/utils/constants.dart';
 
@@ -19,8 +21,26 @@ class _BlocPatternStateScreenState extends State<BlocPatternStateScreen> {
       body: Container(
         padding: EdgeInsets.symmetric(vertical: 16),
         alignment: Alignment.center,
-        // TODO: Implement with cubit
-        child: buildInitialInput(),
+        child: BlocConsumer<WeatherCubit, WeatherState>(
+          listener: (context, state) {
+            if (state is WeatherError) {
+              Scaffold.of(context).showSnackBar(
+                SnackBar(content: Text(state.message)),
+              );
+            }
+          },
+          builder: (context, state) {
+            if (state is WeatherInitial) {
+              return buildInitialInput();
+            } else if (state is WeatherLoading) {
+              return buildLoading();
+            } else if (state is WeatherLoaded) {
+              return buildColumnWithData(state.weather);
+            } else {
+              return buildInitialInput();
+            }
+          },
+        ),
       ),
     );
   }
@@ -77,6 +97,7 @@ class CityInputField extends StatelessWidget {
   }
 
   void submitCityName(BuildContext context, String cityName) {
-    // TODO: Get weather for the city
+    final weatherCubit = context.bloc<WeatherCubit>();
+    weatherCubit.getWeather(cityName);
   }
 }
