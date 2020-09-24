@@ -18,18 +18,11 @@ class ProfileCard extends StatelessWidget {
           child: Row(
             children: [
               Container(
-                child: Icon(Icons.person),
+                width: 64,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(20.0)),
-                  border: Border.symmetric(
-                    horizontal: BorderSide(
-                      width: 4.0,
-                      color: Colors.white,
-                    ),
-                    vertical: BorderSide(
-                      width: 4.0,
-                      color: Colors.white,
-                    ),
+                  image: DecorationImage(
+                    image: AssetImage('images/ambuj.jpg'),
+                    fit: BoxFit.cover,
                   ),
                 ),
               ),
