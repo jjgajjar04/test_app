@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:test_app/components/card/list_card.dart';
+import 'package:test_app/screens/my_drawer.dart';
 import 'package:test_app/utils/constants.dart';
 
 class Home extends StatelessWidget {
@@ -12,6 +13,7 @@ class Home extends StatelessWidget {
         title: Text('Test App'),
         actions: [Icon(Icons.more_vert)],
       ),
+      drawer: MyDrawer(),
       body: Container(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
