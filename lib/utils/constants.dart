@@ -8,4 +8,5 @@ class Constants {
   static const PROVIDER_STATE_SCREEN = 'provider_state_screen';
   static const BLOC_PATTERN_STATE_SCREEN = 'bloc_pattern_state_screen';
   static const CARD_SCREEN = 'card_screen';
+  static const GRID_SCREEN = 'grid_screen';
 }

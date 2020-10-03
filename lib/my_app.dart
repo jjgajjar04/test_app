@@ -7,6 +7,7 @@ import 'package:test_app/models/data_provider.dart';
 import 'package:test_app/screens/bloc_pattern_state_screen.dart';
 import 'package:test_app/screens/button_screen.dart';
 import 'package:test_app/screens/card_screen.dart';
+import 'package:test_app/screens/grid_screen.dart';
 import 'package:test_app/screens/home.dart';
 import 'package:test_app/screens/list_screen.dart';
 import 'package:test_app/screens/multi_widget_state_screen.dart';
@@ -32,6 +33,7 @@ class MyApp extends StatelessWidget {
             CardScreen.id: (context) => CardScreen(),
             ButtonScreen.id: (context) => ButtonScreen(),
             ListScreen.id: (context) => ListScreen(),
+            GridScreen.id: (context) => GridScreen(),
             RowColumnScreen.id: (context) => RowColumnScreen(),
             SimpleStateScreen.id: (context) =>
                 SimpleStateScreen(color: Colors.green),
