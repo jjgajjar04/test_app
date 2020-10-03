@@ -40,6 +40,13 @@ class Home extends StatelessWidget {
               },
             ),
             ListCard(
+              title: Constants.GRID_SCREEN,
+              color: Colors.indigoAccent,
+              onTap: () {
+                Navigator.pushNamed(context, Constants.GRID_SCREEN);
+              },
+            ),
+            ListCard(
               title: Constants.ROW_COLUMN_SCREEN,
               color: Colors.blue,
               onTap: () {

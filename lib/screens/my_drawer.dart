@@ -17,7 +17,24 @@ class MyDrawer extends StatelessWidget {
               child: Container(
                 height: 600.0,
                 width: double.infinity,
-                child: Center(child: Text('Header')),
+                child: Column(
+                  children: [
+                    SizedBox(height: 30),
+                    Row(
+                      children: [
+                        IconButton(
+                          icon: Icon(
+                            Icons.cancel,
+                            color: Colors.white,
+                          ),
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                          },
+                        )
+                      ],
+                    )
+                  ],
+                ),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.only(
                     bottomRight: Radius.circular(20.0),
@@ -39,7 +56,14 @@ class MyDrawer extends StatelessWidget {
             child: Container(
               height: 100.0,
               width: double.infinity,
-              child: Center(child: Text('Header')),
+              child: Center(
+                child: Text(
+                  'Header',
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
+                ),
+              ),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20.0),
                 color: Colors.lightGreen,
