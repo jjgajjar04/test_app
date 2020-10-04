@@ -19,6 +19,13 @@ class Home extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             ListCard(
+              title: Constants.TAB_SCREEN,
+              color: Colors.grey,
+              onTap: () {
+                Navigator.pushNamed(context, Constants.TAB_SCREEN);
+              },
+            ),
+            ListCard(
               title: Constants.CARD_SCREEN,
               color: Colors.black,
               onTap: () {

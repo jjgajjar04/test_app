@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
 import 'package:test_app/bloc/weather_bloc.dart';
+import 'package:test_app/components/my_tab_controller.dart';
 import 'package:test_app/models/data_provider.dart';
 import 'package:test_app/screens/bloc_pattern_state_screen.dart';
 import 'package:test_app/screens/button_screen.dart';
@@ -30,6 +31,7 @@ class MyApp extends StatelessWidget {
           initialRoute: Home.id,
           routes: {
             Home.id: (context) => Home(),
+            MyTabController.id: (context) => MyTabController(),
             CardScreen.id: (context) => CardScreen(),
             ButtonScreen.id: (context) => ButtonScreen(),
             ListScreen.id: (context) => ListScreen(),

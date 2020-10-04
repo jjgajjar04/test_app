@@ -9,4 +9,5 @@ class Constants {
   static const BLOC_PATTERN_STATE_SCREEN = 'bloc_pattern_state_screen';
   static const CARD_SCREEN = 'card_screen';
   static const GRID_SCREEN = 'grid_screen';
+  static const TAB_SCREEN = 'tab_screen';
 }
