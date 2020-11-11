@@ -10,6 +10,7 @@ import 'package:test_app/screens/card_screen.dart';
 import 'package:test_app/screens/grid_screen.dart';
 import 'package:test_app/screens/home.dart';
 import 'package:test_app/screens/list_screen.dart';
+import 'package:test_app/screens/load_json_screen.dart';
 import 'package:test_app/screens/multi_widget_state_screen.dart';
 import 'package:test_app/screens/provider_state_screen.dart';
 import 'package:test_app/screens/row_column_screen.dart';
@@ -28,6 +29,7 @@ class MyApp extends StatelessWidget {
           initialRoute: Home.id,
           routes: {
             Home.id: (context) => Home(),
+            LoadJsonScreen.id: (context) => LoadJsonScreen(),
             MyTabController.id: (context) => MyTabController(),
             CardScreen.id: (context) => CardScreen(),
             ButtonScreen.id: (context) => ButtonScreen(),

@@ -10,4 +10,5 @@ class Constants {
   static const CARD_SCREEN = 'card_screen';
   static const GRID_SCREEN = 'grid_screen';
   static const TAB_SCREEN = 'tab_screen';
+  static const LOAD_JSON_SCREEN = 'load_json_screen';
 }

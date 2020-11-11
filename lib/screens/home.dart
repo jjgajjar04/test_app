@@ -18,6 +18,13 @@ class Home extends StatelessWidget {
         child: Column(
           children: [
             ListCard(
+              title: Constants.LOAD_JSON_SCREEN,
+              color: Colors.black,
+              onTap: () {
+                Navigator.pushNamed(context, Constants.LOAD_JSON_SCREEN);
+              },
+            ),
+            ListCard(
               title: Constants.TAB_SCREEN,
               color: Colors.grey,
               onTap: () {
