@@ -14,9 +14,8 @@ class Home extends StatelessWidget {
         actions: [Icon(Icons.more_vert)],
       ),
       drawer: MyDrawer(),
-      body: Container(
+      body: SingleChildScrollView(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             ListCard(
               title: Constants.TAB_SCREEN,
