@@ -1,4 +1,3 @@
-import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
@@ -25,8 +24,6 @@ class MyApp extends StatelessWidget {
       child: BlocProvider(
         create: (context) => WeatherBloc(FakeWeatherRepository()),
         child: MaterialApp(
-          locale: DevicePreview.of(context).locale,
-          builder: DevicePreview.appBuilder, //(context, widget),
           debugShowCheckedModeBanner: false,
           initialRoute: Home.id,
           routes: {

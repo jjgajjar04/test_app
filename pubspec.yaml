@@ -21,7 +21,6 @@ dependencies:
   intl: ^0.16.1
   bloc: ^6.0.3
   flutter_bloc: ^6.0.5
-  device_preview: ^0.4.8
 
 dev_dependencies:
   flutter_test:
