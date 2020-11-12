@@ -1,7 +1,11 @@
+import 'package:flutter/foundation.dart' show kIsWeb;
+import 'dart:io' show Platform;
+
 import 'package:flutter/material.dart';
-import 'package:test_app/components/card/list_card.dart';
+import 'package:test_app/components/card/home_card_item.dart';
 import 'package:test_app/screens/my_drawer.dart';
 import 'package:test_app/utils/constants.dart';
+import 'package:test_app/utils/homeScreenItemList.dart';
 
 class Home extends StatelessWidget {
   static const String id = Constants.HOME_SCRREN;
@@ -14,101 +18,58 @@ class Home extends StatelessWidget {
         actions: [Icon(Icons.more_vert)],
       ),
       drawer: MyDrawer(),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            ListCard(
-              title: Constants.LOAD_JSON_SCREEN,
-              color: Colors.black,
-              onTap: () {
-                Navigator.pushNamed(context, Constants.LOAD_JSON_SCREEN);
-              },
-            ),
-            ListCard(
-              title: Constants.TAB_SCREEN,
-              color: Colors.grey,
-              onTap: () {
-                Navigator.pushNamed(context, Constants.TAB_SCREEN);
-              },
-            ),
-            ListCard(
-              title: Constants.CARD_SCREEN,
-              color: Colors.black,
-              onTap: () {
-                Navigator.pushNamed(context, Constants.CARD_SCREEN);
-              },
-            ),
-            ListCard(
-              title: Constants.BUTTON_SCREEN,
-              color: Colors.purple,
-              onTap: () {
-                Navigator.pushNamed(context, Constants.BUTTON_SCREEN);
-              },
-            ),
-            ListCard(
-              title: Constants.LIST_SCREEN,
-              color: Colors.indigo,
-              onTap: () {
-                Navigator.pushNamed(context, Constants.LIST_SCREEN);
-              },
-            ),
-            ListCard(
-              title: Constants.GRID_SCREEN,
-              color: Colors.indigoAccent,
-              onTap: () {
-                Navigator.pushNamed(context, Constants.GRID_SCREEN);
-              },
-            ),
-            ListCard(
-              title: Constants.ROW_COLUMN_SCREEN,
-              color: Colors.blue,
-              onTap: () {
-                Navigator.pushNamed(context, Constants.ROW_COLUMN_SCREEN);
-              },
-            ),
-            ListCard(
-              title: Constants.SIMPLE_STATE_SCREEN,
-              color: Colors.green,
-              onTap: () {
-                Navigator.pushNamed(
-                  context,
-                  Constants.SIMPLE_STATE_SCREEN,
-                );
-              },
-            ),
-            ListCard(
-              title: Constants.MULTI_WIDGET_STATE_SCREEN,
-              color: Colors.yellow,
-              onTap: () {
-                Navigator.pushNamed(
-                  context,
-                  Constants.MULTI_WIDGET_STATE_SCREEN,
-                );
-              },
-            ),
-            ListCard(
-              title: Constants.PROVIDER_STATE_SCREEN,
-              color: Colors.orange,
-              onTap: () {
-                Navigator.pushNamed(
-                  context,
-                  Constants.PROVIDER_STATE_SCREEN,
-                );
-              },
-            ),
-            ListCard(
-              title: Constants.BLOC_PATTERN_STATE_SCREEN,
-              color: Colors.red,
-              onTap: () {
-                Navigator.pushNamed(
-                  context,
-                  Constants.BLOC_PATTERN_STATE_SCREEN,
-                );
-              },
-            ),
-          ],
-        ),
-      ),
+      body: getBody(context),
     );
   }
+}
+
+Widget getBody(BuildContext context) {
+  if (kIsWeb) {
+    return bodyForWeb(context);
+  } else if (Platform.isAndroid) {
+    return bodyForAndroid(context);
+  } else {
+    return Container();
+  }
+}
+
+// envoked on Android device
+Widget bodyForAndroid(BuildContext context) {
+  final HomeScreenItemList homeScreenItem = HomeScreenItemList();
+
+  return SingleChildScrollView(
+    child: Column(
+      children: homeScreenItem.getHomeScreenItem
+          .map(
+            (item) => HomeCardItem(
+              title: item,
+              color: Colors.red,
+              onTap: () {
+                Navigator.pushNamed(context, item);
+              },
+            ),
+          )
+          .toList(),
+    ),
+  );
+}
+
+// envoked on Web browser
+Widget bodyForWeb(BuildContext context) {
+  final HomeScreenItemList homeScreenItem = HomeScreenItemList();
+
+  return GridView.builder(
+    itemCount: homeScreenItem.getHomeScreenItem.length,
+    itemBuilder: (context, index) => HomeCardItem(
+      title: homeScreenItem.getHomeScreenItem[index],
+      color: Colors.red,
+      onTap: () {
+        Navigator.pushNamed(
+          context,
+          homeScreenItem.getHomeScreenItem[index],
+        );
+      },
+    ),
+    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 5),
+  );
 }

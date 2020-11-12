@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class ListCard extends StatelessWidget {
+class HomeCardItem extends StatelessWidget {
   final String title;
   final Function onTap;
   final Color color;
 
-  ListCard({@required this.title, this.onTap, this.color});
+  HomeCardItem({@required this.title, this.onTap, this.color});
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,7 @@ class ListCard extends StatelessWidget {
           child: Text(
             title,
             style: TextStyle(
-              fontSize: 16.0,
+              fontSize: 12.0,
               color: Colors.white,
               fontWeight: FontWeight.bold,
             ),
