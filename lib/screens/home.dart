@@ -28,8 +28,10 @@ Widget getBody(BuildContext context) {
     return bodyForWeb(context);
   } else if (Platform.isAndroid) {
     return bodyForAndroid(context);
+  } else if (Platform.isIOS) {
+    return bodyForAndroid(context);
   } else {
-    return Container();
+    return bodyForWeb(context);
   }
 }
 
@@ -59,14 +61,14 @@ Widget bodyForAndroid(BuildContext context) {
   final HomeScreenItemList homeScreenItem = HomeScreenItemList();
 
   return ListView.builder(
-    itemCount: homeScreenItem.getHomeScreenItem.length,
+    itemCount: homeScreenItem.getHomeScreenItem.length - 1,
     itemBuilder: (context, index) => HomeCardItem(
-      title: homeScreenItem.getHomeScreenItem[index],
+      title: homeScreenItem.getHomeScreenItem[index + 1],
       color: Color.fromRGBO(255, index * 10, index * 20, 1),
       onTap: () {
         Navigator.pushNamed(
           context,
-          homeScreenItem.getHomeScreenItem[index],
+          homeScreenItem.getHomeScreenItem[index + 1],
         );
       },
     ),
@@ -78,14 +80,14 @@ Widget bodyForWeb(BuildContext context) {
   final HomeScreenItemList homeScreenItem = HomeScreenItemList();
 
   return GridView.builder(
-    itemCount: homeScreenItem.getHomeScreenItem.length,
+    itemCount: homeScreenItem.getHomeScreenItem.length - 1,
     itemBuilder: (context, index) => HomeCardItem(
-      title: homeScreenItem.getHomeScreenItem[index],
+      title: homeScreenItem.getHomeScreenItem[index + 1],
       color: Color.fromRGBO(255, index * 10, index * 20, 1),
       onTap: () {
         Navigator.pushNamed(
           context,
-          homeScreenItem.getHomeScreenItem[index],
+          homeScreenItem.getHomeScreenItem[index + 1],
         );
       },
     ),
