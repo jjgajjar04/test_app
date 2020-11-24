@@ -34,7 +34,8 @@ Widget getBody(BuildContext context) {
 }
 
 // envoked on Android device
-Widget bodyForAndroid(BuildContext context) {
+/*
+Widget bodyForAndroidX(BuildContext context) {
   final HomeScreenItemList homeScreenItem = HomeScreenItemList();
 
   return SingleChildScrollView(
@@ -43,13 +44,31 @@ Widget bodyForAndroid(BuildContext context) {
           .map(
             (item) => HomeCardItem(
               title: item,
-              color: Colors.red,
+              color: Color(0xff00ff),
               onTap: () {
                 Navigator.pushNamed(context, item);
               },
             ),
           )
           .toList(),
+    ),
+  );
+}
+*/
+Widget bodyForAndroid(BuildContext context) {
+  final HomeScreenItemList homeScreenItem = HomeScreenItemList();
+
+  return ListView.builder(
+    itemCount: homeScreenItem.getHomeScreenItem.length,
+    itemBuilder: (context, index) => HomeCardItem(
+      title: homeScreenItem.getHomeScreenItem[index],
+      color: Color.fromRGBO(255, index * 10, index * 20, 1),
+      onTap: () {
+        Navigator.pushNamed(
+          context,
+          homeScreenItem.getHomeScreenItem[index],
+        );
+      },
     ),
   );
 }
@@ -62,7 +81,7 @@ Widget bodyForWeb(BuildContext context) {
     itemCount: homeScreenItem.getHomeScreenItem.length,
     itemBuilder: (context, index) => HomeCardItem(
       title: homeScreenItem.getHomeScreenItem[index],
-      color: Colors.red,
+      color: Color.fromRGBO(255, index * 10, index * 20, 1),
       onTap: () {
         Navigator.pushNamed(
           context,
