@@ -15,6 +15,7 @@ import 'package:test_app/screens/load_json_screen.dart';
 import 'package:test_app/screens/multi_widget_state_screen.dart';
 import 'package:test_app/screens/provider_state_screen.dart';
 import 'package:test_app/screens/row_column_screen.dart';
+import 'package:test_app/screens/shared_preferences_screen.dart';
 import 'package:test_app/screens/simple_state_screen.dart';
 import 'package:test_app/services/weather_repository.dart';
 
@@ -42,7 +43,8 @@ class MyApp extends StatelessWidget {
             MultiWidgetStateScreen.id: (context) => MultiWidgetStateScreen(),
             ProviderStateScreen.id: (context) => ProviderStateScreen(),
             BlocPatternStateScreen.id: (context) => BlocPatternStateScreen(),
-            FileManagementScreen.id: (context) => FileManagementScreen()
+            FileManagementScreen.id: (context) => FileManagementScreen(),
+            SharedPreferencesScreen.id: (context) => SharedPreferencesScreen(),
           },
         ),
       ),
