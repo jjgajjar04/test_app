@@ -1,5 +1,7 @@
 import 'package:test_app/utils/constants.dart';
 
+import 'constants.dart';
+
 class HomeScreenItemList {
   final List<String> _listItems = [
     Constants.HOME_SCRREN,
@@ -13,7 +15,8 @@ class HomeScreenItemList {
     Constants.SIMPLE_STATE_SCREEN,
     Constants.MULTI_WIDGET_STATE_SCREEN,
     Constants.PROVIDER_STATE_SCREEN,
-    Constants.BLOC_PATTERN_STATE_SCREEN
+    Constants.BLOC_PATTERN_STATE_SCREEN,
+    Constants.FILE_MANAGEMENT_SCRREN
   ];
 
   List<String> get getHomeScreenItem => _listItems;

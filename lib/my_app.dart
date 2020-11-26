@@ -7,6 +7,7 @@ import 'package:test_app/models/data_provider.dart';
 import 'package:test_app/screens/bloc_pattern_state_screen.dart';
 import 'package:test_app/screens/button_screen.dart';
 import 'package:test_app/screens/card_screen.dart';
+import 'package:test_app/screens/file_management_screen.dart';
 import 'package:test_app/screens/grid_screen.dart';
 import 'package:test_app/screens/home.dart';
 import 'package:test_app/screens/list_screen.dart';
@@ -40,7 +41,8 @@ class MyApp extends StatelessWidget {
                 SimpleStateScreen(color: Colors.green),
             MultiWidgetStateScreen.id: (context) => MultiWidgetStateScreen(),
             ProviderStateScreen.id: (context) => ProviderStateScreen(),
-            BlocPatternStateScreen.id: (context) => BlocPatternStateScreen()
+            BlocPatternStateScreen.id: (context) => BlocPatternStateScreen(),
+            FileManagementScreen.id: (context) => FileManagementScreen()
           },
         ),
       ),
