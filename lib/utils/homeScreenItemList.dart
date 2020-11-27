@@ -17,7 +17,8 @@ class HomeScreenItemList {
     Constants.PROVIDER_STATE_SCREEN,
     Constants.BLOC_PATTERN_STATE_SCREEN,
     Constants.FILE_MANAGEMENT_SCRREN,
-    Constants.SHARED_PREFERENCES_SCREEN
+    Constants.SHARED_PREFERENCES_SCREEN,
+    Constants.DATA_TABLE_SCREEN,
   ];
 
   List<String> get getHomeScreenItem => _listItems;

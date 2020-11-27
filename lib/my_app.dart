@@ -7,6 +7,7 @@ import 'package:test_app/models/data_provider.dart';
 import 'package:test_app/screens/bloc_pattern_state_screen.dart';
 import 'package:test_app/screens/button_screen.dart';
 import 'package:test_app/screens/card_screen.dart';
+import 'package:test_app/screens/data_table_screen.dart';
 import 'package:test_app/screens/file_management_screen.dart';
 import 'package:test_app/screens/grid_screen.dart';
 import 'package:test_app/screens/home.dart';
@@ -45,6 +46,7 @@ class MyApp extends StatelessWidget {
             BlocPatternStateScreen.id: (context) => BlocPatternStateScreen(),
             FileManagementScreen.id: (context) => FileManagementScreen(),
             SharedPreferencesScreen.id: (context) => SharedPreferencesScreen(),
+            DataTableScreen.id: (context) => DataTableScreen()
           },
         ),
       ),
