@@ -14,4 +14,5 @@ class Constants {
   static const FILE_MANAGEMENT_SCRREN = 'file_management_screen';
   static const SHARED_PREFERENCES_SCREEN = 'shared_preferences_screen';
   static const DATA_TABLE_SCREEN = 'data_table_screen';
+  static const TIMELINE_SCREEN = 'timeline_screen';
 }

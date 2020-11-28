@@ -19,6 +19,7 @@ class HomeScreenItemList {
     Constants.FILE_MANAGEMENT_SCRREN,
     Constants.SHARED_PREFERENCES_SCREEN,
     Constants.DATA_TABLE_SCREEN,
+    Constants.TIMELINE_SCREEN
   ];
 
   List<String> get getHomeScreenItem => _listItems;

@@ -23,6 +23,7 @@ dependencies:
   flutter_bloc: ^6.1.1
   shared_preferences: ^0.5.12+4
   data_tables: ^1.0.3
+  timeline_tile: ^1.0.0
 
 dev_dependencies:
   flutter_test:
