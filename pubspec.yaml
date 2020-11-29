@@ -24,6 +24,8 @@ dependencies:
   shared_preferences: ^0.5.12+4
   data_tables: ^1.0.3
   timeline_tile: ^1.0.0
+  # device_preview: ^0.5.5
+  device_preview: ^0.6.2-beta
 
 dev_dependencies:
   flutter_test:
