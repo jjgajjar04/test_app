@@ -15,4 +15,5 @@ class Constants {
   static const SHARED_PREFERENCES_SCREEN = 'shared_preferences_screen';
   static const DATA_TABLE_SCREEN = 'data_table_screen';
   static const TIMELINE_SCREEN = 'timeline_screen';
+  static const SIGNAL_R_SCREEN = 'signalr_screen';
 }
