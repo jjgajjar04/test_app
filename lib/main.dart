@@ -2,11 +2,39 @@ import 'package:flutter/material.dart';
 import 'package:test_app/my_app.dart';
 import 'dart:io' show Platform;
 import 'package:flutter/foundation.dart';
+import 'package:device_preview/device_preview.dart';
+import 'package:device_preview/plugins.dart';
+import 'package:flutter/cupertino.dart';
+import 'dart:io';
 
 void main() {
   // Desktop platforms aren't a valid platform.
   if (!kIsWeb) _setTargetPlatformForDesktop();
-  return runApp(MyApp());
+
+  bool preview = false;
+
+  if (!preview)
+    return runApp(MyApp());
+  else
+    return runApp(
+      Row(
+        textDirection: TextDirection.ltr,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Expanded(
+            child: DevicePreview(
+              enabled: true,
+              plugins: [
+                const ScreenshotPlugin(),
+                const FileExplorerPlugin(),
+                const SharedPreferencesExplorerPlugin(),
+              ],
+              builder: (context) => MyApp(),
+            ),
+          ),
+        ],
+      ),
+    );
 }
 
 /// If the current platform is desktop, override the default platform to
