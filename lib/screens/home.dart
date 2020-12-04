@@ -3,6 +3,7 @@ import 'dart:io' show Platform;
 
 import 'package:flutter/material.dart';
 import 'package:test_app/components/card/home_card_item.dart';
+import 'package:test_app/components/home_back_button.dart';
 import 'package:test_app/screens/my_drawer.dart';
 import 'package:test_app/utils/constants.dart';
 import 'package:test_app/utils/homeScreenItemList.dart';
@@ -18,7 +19,16 @@ class Home extends StatelessWidget {
         actions: [Icon(Icons.more_vert)],
       ),
       drawer: MyDrawer(),
-      body: getBody(context),
+      body: Stack(
+        children: [
+          getBody(context),
+          Positioned(
+            bottom: 21,
+            left: 32,
+            child: HomeBackButton(),
+          )
+        ],
+      ),
     );
   }
 }

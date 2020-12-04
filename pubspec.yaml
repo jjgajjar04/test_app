@@ -26,6 +26,8 @@ dependencies:
   timeline_tile: ^1.0.0
   # device_preview: ^0.5.5
   device_preview: ^0.6.2-beta
+  signalr_core: ^1.0.5
+  audioplayers: ^0.17.0
 
 dev_dependencies:
   flutter_test:
@@ -38,6 +40,7 @@ flutter:
   assets:
     - images/
     - users.json
+    - success.mp3
 
   # fonts:
   #   - family: Schyler

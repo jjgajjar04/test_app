@@ -16,11 +16,12 @@ class HomeScreenItemList {
     Constants.MULTI_WIDGET_STATE_SCREEN,
     Constants.PROVIDER_STATE_SCREEN,
     Constants.BLOC_PATTERN_STATE_SCREEN,
-    Constants.FILE_MANAGEMENT_SCRREN,
+    Constants.FILE_MANAGEMENT_SCREEN,
     Constants.SHARED_PREFERENCES_SCREEN,
     Constants.DATA_TABLE_SCREEN,
     Constants.TIMELINE_SCREEN,
     Constants.SIGNAL_R_SCREEN,
+    Constants.DRAG_AND_DROP_SCREEN,
   ];
 
   List<String> get getHomeScreenItem => _listItems;
