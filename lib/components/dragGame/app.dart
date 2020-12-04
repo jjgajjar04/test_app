@@ -1,6 +1,6 @@
 import 'dart:math';
 
-import 'package:audioplayers/audio_cache.dart';
+// import 'package:audioplayers/audio_cache.dart';
 import 'package:flutter/material.dart';
 
 class ColorGame extends StatefulWidget {
@@ -41,7 +41,7 @@ class _ColorGameState extends State<ColorGame> {
       onAccept: (data) {
         setState(() {
           score[emoji] = true;
-          player.play('success.mp3');
+          // player.play('success.mp3');
         });
       },
       onLeave: (data) {},
@@ -116,4 +116,4 @@ class Emoji extends StatelessWidget {
   }
 }
 
-AudioCache player = AudioCache();
+// AudioCache player = AudioCache();
