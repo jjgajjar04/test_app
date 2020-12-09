@@ -17,7 +17,6 @@ class HomeScreenItemList {
     Constants.PROVIDER_STATE_SCREEN,
     Constants.BLOC_PATTERN_STATE_SCREEN,
     Constants.FILE_MANAGEMENT_SCRREN,
-    Constants.SHARED_PREFERENCES_SCREEN,
     Constants.DATA_TABLE_SCREEN,
     Constants.TIMELINE_SCREEN,
     Constants.SIGNAL_R_SCREEN,
