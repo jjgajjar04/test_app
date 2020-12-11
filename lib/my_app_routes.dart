@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:test_app/components/my_tab_controller.dart';
 import 'package:test_app/screens/bloc_pattern_state_screen.dart';
 import 'package:test_app/screens/button_screen.dart';
+import 'package:test_app/screens/canvas_screen.dart';
 import 'package:test_app/screens/card_screen.dart';
 import 'package:test_app/screens/data_table_screen.dart';
+import 'package:test_app/screens/date_picker_screen.dart';
 import 'package:test_app/screens/file_management_screen.dart';
 import 'package:test_app/screens/grid_screen.dart';
 import 'package:test_app/screens/home.dart';
@@ -31,4 +33,6 @@ Map<String, Widget Function(BuildContext)> kRoutes = {
   FileManagementScreen.id: (context) => FileManagementScreen(),
   DataTableScreen.id: (context) => DataTableScreen(),
   TimelineScreen.id: (context) => TimelineScreen(),
+  DatePickerScreen.id: (context) => DatePickerScreen(),
+  CanvasScreen.id: (context) => CanvasScreen(),
 };

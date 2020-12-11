@@ -23,6 +23,7 @@ dependencies:
   flutter_bloc: ^6.1.1
   data_tables: ^1.0.3
   timeline_tile: ^1.0.0
+  syncfusion_flutter_datepicker: ^18.3.53-beta
 
 dev_dependencies:
   flutter_test:

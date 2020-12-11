@@ -20,6 +20,8 @@ class HomeScreenItemList {
     Constants.DATA_TABLE_SCREEN,
     Constants.TIMELINE_SCREEN,
     Constants.SIGNAL_R_SCREEN,
+    Constants.DATE_PICKER_SCREEN,
+    Constants.CANVAS_SCREEN,
   ];
 
   List<String> get getHomeScreenItem => _listItems;
