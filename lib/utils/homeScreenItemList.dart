@@ -22,6 +22,7 @@ class HomeScreenItemList {
     Constants.TIMELINE_SCREEN,
     Constants.SIGNAL_R_SCREEN,
     Constants.DRAG_AND_DROP_SCREEN,
+    Constants.CANVAS_SCREEN,
   ];
 
   List<String> get getHomeScreenItem => _listItems;

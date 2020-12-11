@@ -1,7 +1,10 @@
+import 'dart:js';
+
 import 'package:flutter/material.dart';
 import 'package:test_app/components/my_tab_controller.dart';
 import 'package:test_app/screens/bloc_pattern_state_screen.dart';
 import 'package:test_app/screens/button_screen.dart';
+import 'package:test_app/screens/canvas_screen.dart';
 import 'package:test_app/screens/card_screen.dart';
 import 'package:test_app/screens/data_table_screen.dart';
 import 'package:test_app/screens/drag_and_drop_screen.dart';
@@ -37,4 +40,5 @@ Map<String, Widget Function(BuildContext)> kRoutes = {
   TimelineScreen.id: (context) => TimelineScreen(),
   SignalRScreen.id: (context) => SignalRScreen(),
   DragAndDropScreen.id: (context) => DragAndDropScreen(),
+  CanvasScreen.id: (context) => CanvasScreen(),
 };
