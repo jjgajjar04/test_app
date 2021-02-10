@@ -22,6 +22,7 @@ class HomeScreenItemList {
     Constants.SIGNAL_R_SCREEN,
     Constants.DATE_PICKER_SCREEN,
     Constants.CANVAS_SCREEN,
+    Constants.AUTH_SCREEN,
   ];
 
   List<String> get getHomeScreenItem => _listItems;

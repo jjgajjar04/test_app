@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:test_app/models/dessert.dart';
 import 'package:test_app/utils/constants.dart';
 
-import 'package:data_tables/data_tables.dart';
+// import 'package:data_tables/data_tables.dart';
 
 class DataTableScreen extends StatefulWidget {
   static const String id = Constants.DATA_TABLE_SCREEN;
@@ -46,174 +46,179 @@ class _DataTableScreenState extends State<DataTableScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(DataTableScreen.id)),
-      body: NativeDataTable.builder(
-        rowsPerPage: _rowsPerPage,
-        itemCount: _items?.length ?? 0,
-        firstRowIndex: _rowsOffset,
-        handleNext: () async {
-          setState(() {
-            _rowsOffset += _rowsPerPage;
-          });
-
-          await new Future.delayed(new Duration(seconds: 3));
-          setState(() {
-            _items += [
-              Dessert('New Item 4', 159, 6.0, 24, 4.0, 87, 14, 1),
-              Dessert('New Item 5', 159, 6.0, 24, 4.0, 87, 14, 1),
-              Dessert('New Item 6', 159, 6.0, 24, 4.0, 87, 14, 1),
-            ];
-          });
-        },
-        handlePrevious: () {
-          setState(() {
-            _rowsOffset -= _rowsPerPage;
-          });
-        },
-        mobileSlivers: <Widget>[
-          SliverAppBar(
-            title: Text("Mobile App Bar"),
-          ),
-        ],
-        itemBuilder: (int index) {
-          final Dessert dessert = _items[index];
-          return DataRow.byIndex(
-              index: index,
-              selected: dessert.selected,
-              onSelectChanged: (bool value) {
-                if (dessert.selected != value) {
-                  setState(() {
-                    dessert.selected = value;
-                  });
-                }
-              },
-              cells: <DataCell>[
-                DataCell(Text('${dessert.name}')),
-                DataCell(Text('${dessert.calories}')),
-                DataCell(Text('${dessert.fat.toStringAsFixed(1)}')),
-                DataCell(Text('${dessert.carbs}')),
-                DataCell(Text('${dessert.protein.toStringAsFixed(1)}')),
-                DataCell(Text('${dessert.sodium}')),
-                DataCell(Text('${dessert.calcium}%')),
-                DataCell(Text('${dessert.iron}%')),
-                DataCell(ButtonBar(
-                  children: <Widget>[
-                    IconButton(
-                      icon: Icon(Icons.delete),
-                      onPressed: () {
-                        setState(() {
-                          _items.remove(dessert);
-                        });
-                      },
-                    ),
-                  ],
-                )),
-              ]);
-        },
-        header: const Text('Data Management'),
-        sortColumnIndex: _sortColumnIndex,
-        sortAscending: _sortAscending,
-        onRefresh: () async {
-          await new Future.delayed(new Duration(seconds: 3));
-          setState(() {
-            _items = _desserts;
-          });
-          return null;
-        },
-        onRowsPerPageChanged: (int value) {
-          setState(() {
-            _rowsPerPage = value;
-          });
-          print("New Rows: $value");
-        },
-        mobileItemBuilder: (BuildContext context, int index) {
-          final i = _desserts[index];
-          return ListTile(
-            title: Text(i?.name),
-          );
-        },
-        onSelectAll: (bool value) {
-          for (var row in _items) {
-            setState(() {
-              row.selected = value;
-            });
-          }
-        },
-        rowCountApproximate: true,
-        actions: <Widget>[
-          IconButton(
-            icon: Icon(Icons.info_outline),
-            onPressed: () {},
-          ),
-        ],
-        selectedActions: <Widget>[
-          IconButton(
-            icon: Icon(Icons.delete),
-            onPressed: () {
-              setState(() {
-                for (var item in _items
-                    ?.where((d) => d?.selected ?? false)
-                    ?.toSet()
-                    ?.toList()) {
-                  _items.remove(item);
-                }
-              });
-            },
-          ),
-        ],
-        mobileIsLoading: CircularProgressIndicator(),
-        noItems: Text("No Items Found"),
-        columns: <DataColumn>[
-          DataColumn(
-              label: const Text('Dessert (100g serving)'),
-              onSort: (int columnIndex, bool ascending) =>
-                  _sort<String>((Dessert d) => d.name, columnIndex, ascending)),
-          DataColumn(
-              label: const Text('Calories'),
-              tooltip:
-                  'The total amount of food energy in the given serving size.',
-              numeric: true,
-              onSort: (int columnIndex, bool ascending) => _sort<num>(
-                  (Dessert d) => d.calories, columnIndex, ascending)),
-          DataColumn(
-              label: const Text('Fat (g)'),
-              numeric: true,
-              onSort: (int columnIndex, bool ascending) =>
-                  _sort<num>((Dessert d) => d.fat, columnIndex, ascending)),
-          DataColumn(
-              label: const Text('Carbs (g)'),
-              numeric: true,
-              onSort: (int columnIndex, bool ascending) =>
-                  _sort<num>((Dessert d) => d.carbs, columnIndex, ascending)),
-          DataColumn(
-              label: const Text('Protein (g)'),
-              numeric: true,
-              onSort: (int columnIndex, bool ascending) =>
-                  _sort<num>((Dessert d) => d.protein, columnIndex, ascending)),
-          DataColumn(
-              label: const Text('Sodium (mg)'),
-              numeric: true,
-              onSort: (int columnIndex, bool ascending) =>
-                  _sort<num>((Dessert d) => d.sodium, columnIndex, ascending)),
-          DataColumn(
-              label: const Text('Calcium (%)'),
-              tooltip:
-                  'The amount of calcium as a percentage of the recommended daily amount.',
-              numeric: true,
-              onSort: (int columnIndex, bool ascending) =>
-                  _sort<num>((Dessert d) => d.calcium, columnIndex, ascending)),
-          DataColumn(
-              label: const Text('Iron (%)'),
-              numeric: true,
-              onSort: (int columnIndex, bool ascending) =>
-                  _sort<num>((Dessert d) => d.iron, columnIndex, ascending)),
-          DataColumn(
-            label: const Text('Actions'),
-          ),
-        ],
-      ),
-    );
+        appBar: AppBar(title: Text(DataTableScreen.id)),
+        body: Container(
+          child: Center(child: Text('Data Table library has issues as of now')),
+        ));
   }
+
+  // Widget getDataTableBody() {
+  //   return NativeDataTable.builder(
+  //     rowsPerPage: _rowsPerPage,
+  //     itemCount: _items?.length ?? 0,
+  //     firstRowIndex: _rowsOffset,
+  //     handleNext: () async {
+  //       setState(() {
+  //         _rowsOffset += _rowsPerPage;
+  //       });
+
+  //       await new Future.delayed(new Duration(seconds: 3));
+  //       setState(() {
+  //         _items += [
+  //           Dessert('New Item 4', 159, 6.0, 24, 4.0, 87, 14, 1),
+  //           Dessert('New Item 5', 159, 6.0, 24, 4.0, 87, 14, 1),
+  //           Dessert('New Item 6', 159, 6.0, 24, 4.0, 87, 14, 1),
+  //         ];
+  //       });
+  //     },
+  //     handlePrevious: () {
+  //       setState(() {
+  //         _rowsOffset -= _rowsPerPage;
+  //       });
+  //     },
+  //     mobileSlivers: <Widget>[
+  //       SliverAppBar(
+  //         title: Text("Mobile App Bar"),
+  //       ),
+  //     ],
+  //     itemBuilder: (int index) {
+  //       final Dessert dessert = _items[index];
+  //       return DataRow.byIndex(
+  //           index: index,
+  //           selected: dessert.selected,
+  //           onSelectChanged: (bool value) {
+  //             if (dessert.selected != value) {
+  //               setState(() {
+  //                 dessert.selected = value;
+  //               });
+  //             }
+  //           },
+  //           cells: <DataCell>[
+  //             DataCell(Text('${dessert.name}')),
+  //             DataCell(Text('${dessert.calories}')),
+  //             DataCell(Text('${dessert.fat.toStringAsFixed(1)}')),
+  //             DataCell(Text('${dessert.carbs}')),
+  //             DataCell(Text('${dessert.protein.toStringAsFixed(1)}')),
+  //             DataCell(Text('${dessert.sodium}')),
+  //             DataCell(Text('${dessert.calcium}%')),
+  //             DataCell(Text('${dessert.iron}%')),
+  //             DataCell(ButtonBar(
+  //               children: <Widget>[
+  //                 IconButton(
+  //                   icon: Icon(Icons.delete),
+  //                   onPressed: () {
+  //                     setState(() {
+  //                       _items.remove(dessert);
+  //                     });
+  //                   },
+  //                 ),
+  //               ],
+  //             )),
+  //           ]);
+  //     },
+  //     header: const Text('Data Management'),
+  //     sortColumnIndex: _sortColumnIndex,
+  //     sortAscending: _sortAscending,
+  //     onRefresh: () async {
+  //       await new Future.delayed(new Duration(seconds: 3));
+  //       setState(() {
+  //         _items = _desserts;
+  //       });
+  //       return null;
+  //     },
+  //     onRowsPerPageChanged: (int value) {
+  //       setState(() {
+  //         _rowsPerPage = value;
+  //       });
+  //       print("New Rows: $value");
+  //     },
+  //     mobileItemBuilder: (BuildContext context, int index) {
+  //       final i = _desserts[index];
+  //       return ListTile(
+  //         title: Text(i?.name),
+  //       );
+  //     },
+  //     onSelectAll: (bool value) {
+  //       for (var row in _items) {
+  //         setState(() {
+  //           row.selected = value;
+  //         });
+  //       }
+  //     },
+  //     rowCountApproximate: true,
+  //     actions: <Widget>[
+  //       IconButton(
+  //         icon: Icon(Icons.info_outline),
+  //         onPressed: () {},
+  //       ),
+  //     ],
+  //     selectedActions: <Widget>[
+  //       IconButton(
+  //         icon: Icon(Icons.delete),
+  //         onPressed: () {
+  //           setState(() {
+  //             for (var item in _items
+  //                 ?.where((d) => d?.selected ?? false)
+  //                 ?.toSet()
+  //                 ?.toList()) {
+  //               _items.remove(item);
+  //             }
+  //           });
+  //         },
+  //       ),
+  //     ],
+  //     mobileIsLoading: CircularProgressIndicator(),
+  //     noItems: Text("No Items Found"),
+  //     columns: <DataColumn>[
+  //       DataColumn(
+  //           label: const Text('Dessert (100g serving)'),
+  //           onSort: (int columnIndex, bool ascending) =>
+  //               _sort<String>((Dessert d) => d.name, columnIndex, ascending)),
+  //       DataColumn(
+  //           label: const Text('Calories'),
+  //           tooltip:
+  //               'The total amount of food energy in the given serving size.',
+  //           numeric: true,
+  //           onSort: (int columnIndex, bool ascending) =>
+  //               _sort<num>((Dessert d) => d.calories, columnIndex, ascending)),
+  //       DataColumn(
+  //           label: const Text('Fat (g)'),
+  //           numeric: true,
+  //           onSort: (int columnIndex, bool ascending) =>
+  //               _sort<num>((Dessert d) => d.fat, columnIndex, ascending)),
+  //       DataColumn(
+  //           label: const Text('Carbs (g)'),
+  //           numeric: true,
+  //           onSort: (int columnIndex, bool ascending) =>
+  //               _sort<num>((Dessert d) => d.carbs, columnIndex, ascending)),
+  //       DataColumn(
+  //           label: const Text('Protein (g)'),
+  //           numeric: true,
+  //           onSort: (int columnIndex, bool ascending) =>
+  //               _sort<num>((Dessert d) => d.protein, columnIndex, ascending)),
+  //       DataColumn(
+  //           label: const Text('Sodium (mg)'),
+  //           numeric: true,
+  //           onSort: (int columnIndex, bool ascending) =>
+  //               _sort<num>((Dessert d) => d.sodium, columnIndex, ascending)),
+  //       DataColumn(
+  //           label: const Text('Calcium (%)'),
+  //           tooltip:
+  //               'The amount of calcium as a percentage of the recommended daily amount.',
+  //           numeric: true,
+  //           onSort: (int columnIndex, bool ascending) =>
+  //               _sort<num>((Dessert d) => d.calcium, columnIndex, ascending)),
+  //       DataColumn(
+  //           label: const Text('Iron (%)'),
+  //           numeric: true,
+  //           onSort: (int columnIndex, bool ascending) =>
+  //               _sort<num>((Dessert d) => d.iron, columnIndex, ascending)),
+  //       DataColumn(
+  //         label: const Text('Actions'),
+  //       ),
+  //     ],
+  //   );
+  // }
 
   final List<Dessert> _desserts = <Dessert>[
     Dessert('Frozen yogurt', 159, 6.0, 24, 4.0, 87, 14, 1),

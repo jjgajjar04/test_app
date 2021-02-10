@@ -1,27 +1,50 @@
 import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
+  final String title;
+  final EdgeInsetsGeometry padding;
+  final Color textColor;
+  final Color buttonColor;
+  final double borderRadius;
+  final Color shadowColor;
+  final double shadowSpreadRadius;
+  final double shadowBlurRadius;
+  final Offset shadowOffset;
+
+  const CustomButton({
+    Key key,
+    this.title,
+    this.padding,
+    this.textColor,
+    this.buttonColor,
+    this.borderRadius,
+    this.shadowColor,
+    this.shadowSpreadRadius,
+    this.shadowBlurRadius,
+    this.shadowOffset,
+  }) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Container(
       child: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: padding,
         child: Text(
-          'Custom Button',
+          title,
           style: TextStyle(
-            color: Colors.white,
+            color: textColor,
           ),
         ),
       ),
       decoration: BoxDecoration(
-        color: Colors.redAccent,
-        borderRadius: BorderRadius.circular(24.0),
+        color: buttonColor,
+        borderRadius: BorderRadius.circular(borderRadius),
         boxShadow: [
           BoxShadow(
-            color: Colors.grey,
-            spreadRadius: 2,
-            blurRadius: 8,
-            offset: Offset(2, 2),
+            color: shadowColor,
+            spreadRadius: shadowSpreadRadius,
+            blurRadius: shadowBlurRadius,
+            offset: shadowOffset,
           ),
         ],
       ),
