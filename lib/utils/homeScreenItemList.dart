@@ -23,6 +23,7 @@ class HomeScreenItemList {
     Constants.DATE_PICKER_SCREEN,
     Constants.CANVAS_SCREEN,
     Constants.AUTH_SCREEN,
+    Constants.CAROUSEL_SCREEN,
   ];
 
   List<String> get getHomeScreenItem => _listItems;

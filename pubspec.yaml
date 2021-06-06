@@ -24,6 +24,7 @@ dependencies:
   # data_tables: ^1.0.3
   timeline_tile: ^1.0.0
   syncfusion_flutter_datepicker: ^18.3.53-beta
+  carousel_slider: ^3.0.0
 
 dev_dependencies:
   flutter_test:
@@ -36,6 +37,7 @@ flutter:
   assets:
     - images/
     - users.json
+    - MAC.jpg
 
   # fonts:
   #   - family: Schyler

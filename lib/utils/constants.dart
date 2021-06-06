@@ -18,4 +18,5 @@ class Constants {
   static const DATE_PICKER_SCREEN = 'date_picker_screen';
   static const CANVAS_SCREEN = 'canvas_screen';
   static const AUTH_SCREEN = 'auth_screen';
+  static const CAROUSEL_SCREEN = 'carousel_screen';
 }
