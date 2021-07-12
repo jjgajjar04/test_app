@@ -76,6 +76,7 @@ Widget bodyForAndroid(BuildContext context) {
       title: homeScreenItem.getHomeScreenItem[index + 1],
       color: Color.fromRGBO(255, index * 10, index * 20, 1),
       onTap: () {
+        print('CLICKED :: ${homeScreenItem.getHomeScreenItem[index + 1]}');
         Navigator.pushNamed(
           context,
           homeScreenItem.getHomeScreenItem[index + 1],

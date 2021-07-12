@@ -23,6 +23,8 @@ class HomeScreenItemList {
     Constants.SIGNAL_R_SCREEN,
     Constants.DRAG_AND_DROP_SCREEN,
     Constants.CANVAS_SCREEN,
+    Constants.SOCIAL_SHARE_SCREEN,
+    Constants.GAME_SCREEN,
   ];
 
   List<String> get getHomeScreenItem => _listItems;

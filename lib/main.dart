@@ -7,7 +7,10 @@ import 'package:device_preview/plugins.dart';
 import 'package:flutter/cupertino.dart';
 import 'dart:io';
 
+import 'package:test_app/service_locator.dart' as di;
+
 void main() {
+  di.init();
   // Desktop platforms aren't a valid platform.
   if (!kIsWeb) _setTargetPlatformForDesktop();
 

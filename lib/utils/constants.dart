@@ -18,4 +18,6 @@ class Constants {
   static const SIGNAL_R_SCREEN = 'signalr_screen';
   static const DRAG_AND_DROP_SCREEN = 'drag_and_drop_screen';
   static const CANVAS_SCREEN = 'canvas_screen';
+  static const SOCIAL_SHARE_SCREEN = 'social_share_screen';
+  static const GAME_SCREEN = 'game_screen';
 }
