@@ -93,9 +93,9 @@ class _ColorGameState extends State<ColorGame> {
 }
 
 class Emoji extends StatelessWidget {
-  Emoji({Key key, this.emoji}) : super(key: key);
+  Emoji({Key? key, this.emoji}) : super(key: key);
 
-  final String emoji;
+  final String? emoji;
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -105,7 +105,7 @@ class Emoji extends StatelessWidget {
         height: 80,
         padding: EdgeInsets.all(10),
         child: Text(
-          emoji,
+          emoji!,
           style: TextStyle(
             color: Colors.black,
             fontSize: 50,

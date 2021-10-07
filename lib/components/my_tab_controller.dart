@@ -14,7 +14,7 @@ class _MyTabControllerState extends State<MyTabController>
     Tab(text: 'RIGHT'),
   ];
 
-  TabController _tabController;
+  TabController? _tabController;
 
   @override
   void initState() {
@@ -24,7 +24,7 @@ class _MyTabControllerState extends State<MyTabController>
 
   @override
   void dispose() {
-    _tabController.dispose();
+    _tabController!.dispose();
     super.dispose();
   }
 
@@ -41,7 +41,7 @@ class _MyTabControllerState extends State<MyTabController>
       body: TabBarView(
         controller: _tabController,
         children: myTabs.map((Tab tab) {
-          final String label = tab.text.toLowerCase();
+          final String label = tab.text!.toLowerCase();
           return Center(
             child: Text(
               'This is the $label tab',

@@ -27,7 +27,7 @@ class ApiProvider with ChangeNotifier {
   }
 
   //! initial data
-  Future<ApiResponse> getAPI_1() async {
+  Future<ApiResponse?> getAPI_1() async {
     var response;
 
     try {

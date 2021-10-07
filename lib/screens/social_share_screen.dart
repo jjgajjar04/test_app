@@ -142,7 +142,7 @@ class _SocialShareScreenState extends State<SocialShareScreen> {
   }
 
   void _onShare(BuildContext context) async {
-    final box = context.findRenderObject() as RenderBox;
+    final box = context.findRenderObject() as RenderBox?;
 
     if (kIsWeb) {
       print('web');
@@ -161,7 +161,7 @@ class _SocialShareScreenState extends State<SocialShareScreen> {
       await Share.share(
         text,
         subject: subject,
-        sharePositionOrigin: box.localToGlobal(Offset.zero) & box.size,
+        sharePositionOrigin: box!.localToGlobal(Offset.zero) & box.size,
       );
     }
 

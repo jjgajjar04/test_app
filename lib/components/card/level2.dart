@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:test_app/components/card/level3.dart';
 
 class Level2 extends StatefulWidget {
-  final String title;
+  final String? title;
   Level2({this.title});
 
   @override

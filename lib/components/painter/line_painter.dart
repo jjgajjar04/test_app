@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class LinePainter extends CustomPainter {
-  final double xPos;
-  final double yPos;
+  final double? xPos;
+  final double? yPos;
 
   LinePainter({this.xPos, this.yPos});
 
@@ -14,7 +14,7 @@ class LinePainter extends CustomPainter {
       ..strokeWidth = 10.0;
 
     Path path = Path();
-    path.moveTo(xPos, xPos);
+    path.moveTo(xPos!, xPos!);
     path.lineTo(size.width, size.height);
 
     path.close();

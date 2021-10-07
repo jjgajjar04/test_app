@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 
 class HomeCardItem extends StatelessWidget {
   final String title;
-  final Function onTap;
-  final Color color;
+  final Function? onTap;
+  final Color? color;
 
-  HomeCardItem({@required this.title, this.onTap, this.color});
+  HomeCardItem({required this.title, this.onTap, this.color});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: onTap,
+      onTap: onTap as void Function()?,
       child: Container(
         height: 60.0,
         margin: EdgeInsets.all(12.0),

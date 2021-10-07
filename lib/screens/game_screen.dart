@@ -7,10 +7,10 @@ import '../service_locator.dart';
 class GameScreen extends StatelessWidget {
   static const String id = Constants.GAME_SCREEN;
 
-  final ApiProvider _provider = getIt<ApiProvider>();
+  final ApiProvider? _provider = getIt<ApiProvider>();
 
   void loadData() async {
-    await _provider.getAPI_1();
+    await _provider!.getAPI_1();
   }
 
   @override
@@ -22,7 +22,7 @@ class GameScreen extends StatelessWidget {
       body: Container(
         width: double.infinity,
         child: Column(
-          children: _provider.listData
+          children: _provider!.listData
               .map(
                 (e) => Card(
                   child: Container(
@@ -35,19 +35,19 @@ class GameScreen extends StatelessWidget {
                         Align(
                           alignment: Alignment.topCenter,
                           child: Text(
-                            e.nation,
+                            e.nation!,
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 32,
                             ),
                           ),
                         ),
-                        Text(e.gameType),
-                        Text(e.marketId),
-                        Text(e.max),
-                        Text(e.min),
-                        Text(e.remark),
-                        Text(e.sectionId),
+                        Text(e.gameType!),
+                        Text(e.marketId!),
+                        Text(e.max!),
+                        Text(e.min!),
+                        Text(e.remark!),
+                        Text(e.sectionId!),
                         Text(e.b1.toString()),
                       ],
                     ),

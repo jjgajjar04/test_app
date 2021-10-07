@@ -1,24 +1,24 @@
 import 'dart:convert';
 
 class GameModel {
-  String marketId;
-  String sectionId;
-  String nation;
-  int b1;
-  int bs1;
-  int l1;
-  int ls1;
-  String Srno;
-  String gameType;
-  String UpdateTime;
-  String gstatus;
-  String remark;
-  String lasttime;
-  String min;
-  String max;
-  String C1;
-  String C2;
-  String C3;
+  String? marketId;
+  String? sectionId;
+  String? nation;
+  int? b1;
+  int? bs1;
+  int? l1;
+  int? ls1;
+  String? Srno;
+  String? gameType;
+  String? UpdateTime;
+  String? gstatus;
+  String? remark;
+  String? lasttime;
+  String? min;
+  String? max;
+  String? C1;
+  String? C2;
+  String? C3;
 
   GameModel({
     this.marketId,

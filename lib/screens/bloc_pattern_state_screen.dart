@@ -25,7 +25,7 @@ class _BlocPatternStateScreenState extends State<BlocPatternStateScreen> {
           listener: (context, state) {
             if (state is WeatherError) {
               ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(content: Text(state.message)),
+                SnackBar(content: Text(state.message!)),
               );
             }
           },
@@ -35,7 +35,7 @@ class _BlocPatternStateScreenState extends State<BlocPatternStateScreen> {
             } else if (state is WeatherLoading) {
               return buildLoading();
             } else if (state is WeatherLoaded) {
-              return buildColumnWithData(state.weather);
+              return buildColumnWithData(state.weather!);
             } else {
               return buildInitialInput();
             }
@@ -62,7 +62,7 @@ class _BlocPatternStateScreenState extends State<BlocPatternStateScreen> {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: <Widget>[
         Text(
-          weather.cityName,
+          weather.cityName!,
           style: TextStyle(
             fontSize: 40,
             fontWeight: FontWeight.w700,

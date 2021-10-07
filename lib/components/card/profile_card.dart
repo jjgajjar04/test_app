@@ -3,7 +3,7 @@ import 'package:intl/intl.dart';
 import 'package:test_app/models/user.dart';
 
 class ProfileCard extends StatelessWidget {
-  final User user;
+  final User? user;
 
   ProfileCard({this.user});
 
@@ -33,20 +33,20 @@ class ProfileCard extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        user.title,
+                        user!.title!,
                         style: TextStyle(
                           fontSize: 24.0,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                       Text(
-                        user.role,
+                        user!.role!,
                         style: TextStyle(
                           color: Colors.black54,
                         ),
                       ),
                       Text(
-                        DateFormat().format(user.joiningDate),
+                        DateFormat().format(user!.joiningDate!),
                         style: TextStyle(
                           color: Colors.black45,
                         ),

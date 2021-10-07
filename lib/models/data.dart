@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 
 class Data {
-  String title;
-  Color color;
+  String? title;
+  Color? color;
 
   Data({this.title, this.color});
 

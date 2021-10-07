@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:test_app/components/card/level4.dart';
 
 class Level3 extends StatefulWidget {
-  final String title;
+  final String? title;
   Level3({this.title});
 
   @override
@@ -26,7 +26,7 @@ class _Level3State extends State<Level3> {
         color: Colors.red,
         child: Center(
             child: Text(
-          widget.title == null ? 'level 3' : widget.title,
+          widget.title == null ? 'level 3' : widget.title!,
           style: TextStyle(
             color: Colors.white,
           ),

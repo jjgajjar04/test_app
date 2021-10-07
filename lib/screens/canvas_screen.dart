@@ -20,11 +20,11 @@ class CanvasScreen extends StatelessWidget {
 }
 
 class CustomPainterDraggable extends StatefulWidget {
-  final double screenHeight;
-  final double screenWidth;
+  final double? screenHeight;
+  final double? screenWidth;
 
   const CustomPainterDraggable({
-    Key key,
+    Key? key,
     this.screenHeight,
     this.screenWidth,
   }) : super(key: key);
@@ -53,7 +53,7 @@ class _CustomPainterDraggableState extends State<CustomPainterDraggable> {
     return isInside;
   }
 
-  Function _callOnTap(var x, var y) {
+  Function? _callOnTap(var x, var y) {
     print('$x - $y');
     return null;
   }
@@ -68,7 +68,7 @@ class _CustomPainterDraggableState extends State<CustomPainterDraggable> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: _callOnTap(xPos, yPos),
+      onTap: _callOnTap(xPos, yPos) as void Function()?,
       onPanStart: (details) => _dragging = _insideRect(
         details.globalPosition.dx,
         details.globalPosition.dy,

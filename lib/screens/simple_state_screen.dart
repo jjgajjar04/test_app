@@ -3,7 +3,7 @@ import 'package:test_app/utils/constants.dart';
 
 class SimpleStateScreen extends StatefulWidget {
   static const String id = Constants.SIMPLE_STATE_SCREEN;
-  final Color color;
+  final Color? color;
   SimpleStateScreen({this.color});
 
   @override

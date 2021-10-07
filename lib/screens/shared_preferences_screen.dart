@@ -14,7 +14,7 @@ class SharedPreferencesScreen extends StatefulWidget {
 
 class _SharedPreferencesScreenState extends State<SharedPreferencesScreen> {
   Future<SharedPreferences> _pref = SharedPreferences.getInstance();
-  Future<int> _hexCode;
+  Future<int>? _hexCode;
 
   Future<void> _changeColor() async {
     print('button clicked !!');
@@ -62,7 +62,7 @@ class _SharedPreferencesScreenState extends State<SharedPreferencesScreen> {
                       child: Text('${snapshot.data}'),
                       onPressed: _changeColor,
                     ),
-                    color: Color(4294000000 + snapshot.data),
+                    color: Color(4294000000 + snapshot.data!),
                   );
                 }
             }

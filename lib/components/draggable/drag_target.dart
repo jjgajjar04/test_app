@@ -7,7 +7,7 @@ class DragTargetItem extends StatefulWidget {
 }
 
 class _DragTargetItemState extends State<DragTargetItem> {
-  bool accepted;
+  late bool accepted;
 
   @override
   void initState() {
@@ -27,19 +27,19 @@ class _DragTargetItemState extends State<DragTargetItem> {
                 color: Colors.black,
               );
       },
-      onWillAccept: (data) {
+      onWillAccept: (dynamic data) {
         setState(() {
           accepted = true;
         });
 
         return true;
       },
-      onAccept: (data) {
+      onAccept: (dynamic data) {
         setState(() {
           accepted = true;
         });
       },
-      onLeave: (data) {
+      onLeave: (dynamic data) {
         setState(() {
           accepted = true;
         });

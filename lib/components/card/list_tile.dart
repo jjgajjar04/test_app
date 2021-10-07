@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 class ListTileCard extends StatelessWidget {
-  final Icon leading;
-  final String title;
-  final Color tileColor;
-  final Function onTap;
+  final Icon? leading;
+  final String? title;
+  final Color? tileColor;
+  final Function? onTap;
 
   ListTileCard({
     this.leading,
@@ -24,12 +24,12 @@ class ListTileCard extends StatelessWidget {
         ),
         tileColor: tileColor,
         title: Text(
-          title,
+          title!,
           style: TextStyle(
             color: Colors.white,
           ),
         ),
-        onTap: onTap,
+        onTap: onTap as void Function()?,
       ),
     );
   }

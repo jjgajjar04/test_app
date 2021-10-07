@@ -10,5 +10,5 @@ class Dessert {
   final int calcium;
   final int iron;
 
-  bool selected = false;
+  bool? selected = false;
 }

@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:test_app/components/card/level1.dart';
 import 'package:test_app/models/data_provider.dart';
 import 'package:test_app/utils/constants.dart';
-import 'package:random_words/random_words.dart';
+import 'package:english_words/english_words.dart';
 
 class ProviderStateScreen extends StatelessWidget {
   static const id = Constants.PROVIDER_STATE_SCREEN;
@@ -28,7 +28,7 @@ class ProviderStateScreen extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
         onPressed: () {
-          String title = generateNoun().take(1).first.toString();
+          String title = nouns.take(1).first.toString();
           Provider.of<DataProvider>(context, listen: false).changeTitle(title);
         },
       ),

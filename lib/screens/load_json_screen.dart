@@ -4,7 +4,7 @@ import 'dart:convert';
 
 class LoadJsonScreen extends StatelessWidget {
   static const String id = Constants.LOAD_JSON_SCREEN;
-  final List data = new List();
+  final List data = [];
   @override
   Widget build(BuildContext context) {
     return Scaffold(

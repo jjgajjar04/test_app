@@ -11,7 +11,7 @@ class SignalRScreen extends StatefulWidget {
 }
 
 class _SignalRScreenState extends State<SignalRScreen> {
-  String response;
+  late String response;
 
   Future<void> _callSignalR() async {
     print('signalR clicked!');

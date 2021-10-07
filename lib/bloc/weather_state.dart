@@ -14,7 +14,7 @@ class WeatherLoading extends WeatherState {
 }
 
 class WeatherLoaded extends WeatherState {
-  final Weather weather;
+  final Weather? weather;
   const WeatherLoaded({this.weather});
 
   @override
@@ -29,7 +29,7 @@ class WeatherLoaded extends WeatherState {
 }
 
 class WeatherError extends WeatherState {
-  final String message;
+  final String? message;
   WeatherError({this.message});
 
   @override

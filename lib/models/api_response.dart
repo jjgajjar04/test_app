@@ -1,9 +1,9 @@
 import 'dart:convert';
 
 class ApiResponse {
-  bool success;
+  bool? success;
   dynamic data;
-  DateTime starttime;
+  DateTime? starttime;
 
   ApiResponse({
     this.success,
@@ -15,7 +15,7 @@ class ApiResponse {
     return {
       'success': success,
       'data': data,
-      'starttime': starttime.millisecondsSinceEpoch,
+      'starttime': starttime!.millisecondsSinceEpoch,
     };
   }
 

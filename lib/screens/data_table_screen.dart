@@ -12,8 +12,8 @@ class DataTableScreen extends StatefulWidget {
 }
 
 class _DataTableScreenState extends State<DataTableScreen> {
-  int _rowsPerPage = PaginatedDataTable.defaultRowsPerPage;
-  int _sortColumnIndex;
+  int? _rowsPerPage = PaginatedDataTable.defaultRowsPerPage;
+  int? _sortColumnIndex;
   bool _sortAscending = true;
 
   @override
@@ -48,12 +48,12 @@ class _DataTableScreenState extends State<DataTableScreen> {
     return Scaffold(
       appBar: AppBar(title: Text(DataTableScreen.id)),
       body: NativeDataTable.builder(
-        rowsPerPage: _rowsPerPage,
+        rowsPerPage: _rowsPerPage!,
         itemCount: _items?.length ?? 0,
         firstRowIndex: _rowsOffset,
         handleNext: () async {
           setState(() {
-            _rowsOffset += _rowsPerPage;
+            _rowsOffset += _rowsPerPage!;
           });
 
           await new Future.delayed(new Duration(seconds: 3));
@@ -67,7 +67,7 @@ class _DataTableScreenState extends State<DataTableScreen> {
         },
         handlePrevious: () {
           setState(() {
-            _rowsOffset -= _rowsPerPage;
+            _rowsOffset -= _rowsPerPage!;
           });
         },
         mobileSlivers: <Widget>[
@@ -79,8 +79,8 @@ class _DataTableScreenState extends State<DataTableScreen> {
           final Dessert dessert = _items[index];
           return DataRow.byIndex(
               index: index,
-              selected: dessert.selected,
-              onSelectChanged: (bool value) {
+              selected: dessert.selected!,
+              onSelectChanged: (bool? value) {
                 if (dessert.selected != value) {
                   setState(() {
                     dessert.selected = value;
@@ -120,7 +120,7 @@ class _DataTableScreenState extends State<DataTableScreen> {
           });
           return null;
         },
-        onRowsPerPageChanged: (int value) {
+        onRowsPerPageChanged: (int? value) {
           setState(() {
             _rowsPerPage = value;
           });
@@ -129,10 +129,10 @@ class _DataTableScreenState extends State<DataTableScreen> {
         mobileItemBuilder: (BuildContext context, int index) {
           final i = _desserts[index];
           return ListTile(
-            title: Text(i?.name),
+            title: Text(i.name),
           );
         },
-        onSelectAll: (bool value) {
+        onSelectAll: (bool? value) {
           for (var row in _items) {
             setState(() {
               row.selected = value;
@@ -152,9 +152,9 @@ class _DataTableScreenState extends State<DataTableScreen> {
             onPressed: () {
               setState(() {
                 for (var item in _items
-                    ?.where((d) => d?.selected ?? false)
-                    ?.toSet()
-                    ?.toList()) {
+                    .where((d) => d.selected ?? false)
+                    .toSet()
+                    .toList()) {
                   _items.remove(item);
                 }
               });
