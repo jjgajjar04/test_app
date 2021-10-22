@@ -18,19 +18,11 @@ class MyApp extends StatelessWidget {
           create: (context) => DataProvider(),
           child: BlocProvider(
             create: (context) => WeatherBloc(FakeWeatherRepository()),
-            child: MaterialApp(
-              debugShowCheckedModeBanner: false,
-              initialRoute: Home.id,
-              routes: kRoutes,
-            ),
+            child: MaterialApp(debugShowCheckedModeBanner: false,initialRoute: Home.id,routes: kRoutes),
           ),
         ),
       ],
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        initialRoute: Home.id,
-        routes: kRoutes,
-      ),
+      child: MaterialApp(debugShowCheckedModeBanner: false,initialRoute: Home.id,routes: kRoutes),
     );
   }
 }
